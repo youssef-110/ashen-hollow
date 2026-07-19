@@ -1,0 +1,83 @@
+/**
+ * Ashen Hollow — Global page styles
+ * Dark fantasy action game inspired by Bloodborne and Elden Ring
+ * Author: Youssef | github.com/youssef-880
+ */
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24'><path d='M12 1v8M12 15v8M1 12h8M15 12h8' stroke='%23c9a84c' stroke-width='2'/><circle cx='12' cy='12' r='2' fill='%23c9a84c'/></svg>") 12 12, crosshair;
+}
+
+#game-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#game-container canvas {
+  display: block;
+  margin: auto;
+  cursor: inherit;
+}
+
+/* Loading screen shown before Phaser boots */
+#loading-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #050510;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+
+#loading-screen.hidden {
+  opacity: 0;
+}
+
+#loading-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 900;
+  font-size: 48px;
+  letter-spacing: 12px;
+  color: #c9a84c;
+  text-shadow: 0 0 30px rgba(201, 168, 76, 0.35);
+}
+
+#loading-sub {
+  font-family: 'Cinzel', serif;
+  font-size: 16px;
+  letter-spacing: 6px;
+  color: #f5f0e8;
+  opacity: 0.4;
+  margin-top: 16px;
+  animation: loading-pulse 2s ease-in-out infinite;
+}
+
+@keyframes loading-pulse {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.6; }
+}
+
+/* Mobile: canvas scales via Phaser FIT mode; keep page locked */
+@media (max-width: 768px) {
+  #loading-title { font-size: 28px; letter-spacing: 6px; }
+  #loading-sub { font-size: 12px; }
+}
