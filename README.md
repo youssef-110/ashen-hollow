@@ -2,6 +2,8 @@
 
 A dark fantasy 2D action game built with [Phaser 3](https://phaser.io/), inspired by *Bloodborne* and *Elden Ring*.
 
+**Play it:** https://ashen-hollow-eta.vercel.app
+
 ## Running locally
 
 This is a static site with no build step — just serve the directory and open it in a browser.
